@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        // Ignore this in your implementation
+        window.isMbscDemo = true;
+    </script>
+    <script src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+    <script src="https://raw.githubusercontent.com/xsoh/moment-hijri/master/moment-hijri.js"></script>
+    
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment-hijri@1.5.0/moment-hijri.min.js"></script> -->
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>/ -->
+    <title>
+        Calendar systems 
+    </title>
+
+    <!-- Mobiscroll JS and CSS Includes -->
+    <link rel="stylesheet" href="css/mobiscroll.javascript.min.css">
+    <script src="js/mobiscroll.javascript.min.js"></script>
+   
+
+    <style type="text/css">
+            body {
+        margin: 0;
+        padding: 0;
+    }
+
+    button {
+        display: inline-block;
+        margin: 5px 5px 0 0;
+        padding: 10px 30px;
+        outline: 0;
+        border: 0;
+        cursor: pointer;
+        background: #5185a8;
+        color: #fff;
+        text-decoration: none;
+        font-family: arial, verdana, sans-serif;
+        font-size: 14px;
+        font-weight: 100;
+    }
+
+    input {
+        width: 100%;
+        margin: 0 0 5px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 0;
+        font-family: arial, verdana, sans-serif;
+        font-size: 14px;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+    }
+
+    .mbsc-page {
+        padding: 1em;
+    }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div mbsc-page class="demo-gregorian-jalali-hijri">
+        <div style="height:100%">
+                <div id="demo-gregorian"></div>
+    <div id="demo-jalali"></div>
+    <div dir="rtl" ><input type="text" name="" id="demo-hijri"></div>
+        </div>
+    </div>
+
+  <script>
+    mobiscroll.setOptions({
+    theme: 'ios',
+    themeVariant: 'light',
+});
+
+mobiscroll.datepicker('#demo-gregorian', {
+    controls: ['date'],
+    display: 'inline',
+    calendarSystem: mobiscroll.gregorianCalendar,
+    locale: mobiscroll.locale.en,
+});
+
+mobiscroll.datepicker('#demo-jalali', {
+    controls: ['date'],
+    display: 'inline',
+    calendarSystem: mobiscroll.jalaliCalendar,
+    locale: mobiscroll.locale.fa,
+});
+
+mobiscroll.datepicker('#demo-hijri', {
+    controls: ['date'],
+    display: 'inline',
+    calendarSystem: mobiscroll.hijriCalendar,
+    locale: {
+        
+        monthNames: ["محرّم", "صفر", "ربيع الأول", "ربيع الثاني", "جمادى الأولى", "جمادى الثانية", "رجب", "شعبان", "رمضان", "شوّال", "ذو القعدة", "ذو الحجة"],
+        // ... other localized settings
+    }
+});
+
+
+ 
+
+
+
+  </script>
+
+<script>
+ var r = solarHijri.HijriToGregorian(1396, 1, 1);
+    console.log(r);
+</script>
+ 
+
+ 
+
+
+
+
+<script src="./node_modules/solarhijri-js/"></script>
+
+
+</body>
+
+</html>
